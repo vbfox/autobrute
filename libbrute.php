@@ -116,7 +116,7 @@ function play_brute_($login, $password, $ch)
 		return;
 	}
 	$combats = $combats[1];
-	progress_success('$combats fights to do');
+	progress_success("$combats fights to do");
 
 	progress_start('Search adversary names');
 	$preg_result = preg_match_all("/onclick=\"document\.location='\/vs\/([^']*)';\"/", $arene, $combatants, PREG_PATTERN_ORDER);
