@@ -1,0 +1,50 @@
+body
+{
+	font-family: verdana, arial, helvetica, sans-serif;
+	color: #803B1F;
+	
+
+	background-color:#ECAD71;
+	background-image: url('gradientBG.jpg');
+	background-position: left top;
+	background-repeat: repeat-x;
+}
+
+a
+{
+	color:#904B2F;
+	font-weight: bold;
+}
+
+h1
+{
+	text-align: center;
+}
+
+.swf_brute
+{
+	float: left;
+}
+
+.swf_inventory
+{
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	display: none;
+}
+
+.more_info
+{
+	float: right;
+}
+
+.clear
+{
+	clear: both;
+}
+
+.play
+{
+	margin-left: 100px;
+}
