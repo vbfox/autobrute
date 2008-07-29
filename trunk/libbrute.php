@@ -2,12 +2,12 @@
 
 function progress_fail($reason = NULL)
 {
-	print("<font color='red'><b>Failed");
+	print("<span class='error'>Failed");
 	if ($reason != NULL)
 	{
 		print(": $reason");
 	}
-	print("</b>.</font></li></ul>");
+	print(".</span></li></ul>");
 }
 
 function progress_start($name)
@@ -17,12 +17,12 @@ function progress_start($name)
 
 function progress_success($reason = NULL)
 {
-	print("<font color='green'><b>Ok");
+	print("<span class='ok'>Ok");
 	if ($reason != NULL)
 	{
 		print(": $reason");
 	}
-	print("</b>.</font></li>");
+	print(".</span></li>");
 }
 
 function play_brute($login, $password)

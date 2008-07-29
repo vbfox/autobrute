@@ -28,7 +28,7 @@ h1
 
 .swf_inventory
 {
-	position: absolute;
+	position: fixed;
 	left: 20px;
 	top: 20px;
 	display: none;
@@ -47,4 +47,16 @@ h1
 .play
 {
 	margin-left: 100px;
+}
+
+.ok
+{
+	color: green;
+	font-weight: bold;
+}
+
+.error
+{
+	color: red;
+	font-weight: bold;
 }
