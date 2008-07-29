@@ -30,7 +30,7 @@ if ( (!array_key_exists('login', $_GET))
 	all with the password <strong>pwd</strong> is :
 </p>
 <pre>
-	http://labrute.vbfox.net/multi/?login[]=fa&amp;login[]=fb&amp;login[]=fc&amp;password=pwd
+	http://script/url/?login[]=fa&amp;login[]=fb&amp;login[]=fc&amp;password=pwd
 </pre>
 <?php
 }
@@ -42,14 +42,9 @@ else
 	$first = true;
 	foreach($logins as $login)
 	{
-		if ($first)
-		{
-			$first = false;
-		}
-		else
-		{
-			print("<hr class='clear' />");
-		}
+		if (!$first) print("<hr class='clear' />");
+		$first = false;
+
 		play_brute($login, $_GET['password']);
 	}
 }
