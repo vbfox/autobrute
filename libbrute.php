@@ -75,13 +75,13 @@ function play_brute_($login, $password, $ch)
 	curl_setopt($ch, CURLOPT_URL, "$url_base/cellule");
 	$cellule = curl_exec ($ch);
 
-	if (preg_match("/(path=http:\/\/data.labrute.fr\/swf\/[^\"]*)\"/", $cellule, $brute_flash_vars))
+	if (preg_match("/(__file=http:\/\/data\.labrute\.fr\/swf\/loader\.swf[^\"]*)\"/", $cellule, $brute_flash_vars))
 	{
 		$brute_flash_vars = $brute_flash_vars[1];
 		brute_swf($login, $brute_flash_vars);
 	}
 
-	if (preg_match("/(infos=[^\"]*)\"/", $cellule, $inventory_flash_vars))
+	if (preg_match("/(__file=http:\/\/data\.labrute\.fr\/swf\/inventory\.swf[^\"]*)\"/", $cellule, $inventory_flash_vars))
 	{
 		$inventory_flash_vars = $inventory_flash_vars[1];
 		inventory_swf($login, $inventory_flash_vars);
@@ -135,6 +135,7 @@ function play_brute_($login, $password, $ch)
 		$combatant = $combatants[$i];
 		print("<li>Fighting <strong>$combatant</strong>...");
 
+		echo "$url_base/vs/$combatant<br/>";
 		curl_setopt($ch, CURLOPT_URL, "$url_base/vs/$combatant");
 		curl_exec ($ch);
 		
@@ -183,7 +184,7 @@ function inventory_swf($login, $flash_vars)
 ?>
 	<script type="text/javascript">
 	//<![CDATA[
-	var so = new SWFObject("http://data.labrute.fr/swf/inventory.swf?v=2","inventory_<? echo $login_html; ?>",310,600,8,"#FAF8C3");
+	var so = new SWFObject("http://data.labrute.fr/swf/uc.swf?v=15","inventory_<? echo $login_html; ?>",310,600,8,"#FAF8C3");
 	so.addParam("menu","false");
 	so.addParam("wmode","transparent");
 	so.addParam("AllowScriptAccess","always");
@@ -201,7 +202,7 @@ function brute_swf($login, $flash_vars)
 ?>
 	<script type="text/javascript">
 	//<![CDATA[
-	var so = new SWFObject("http://data.labrute.fr/swf/loader.swf?v=0","brute_<? echo $login_html; ?>",90,175,8,"#FAF8C3");
+	var so = new SWFObject("http://data.labrute.fr/swf/uc.swf?v=15","brute_<? echo $login_html; ?>",90,175,8,"#FAF8C3");
 	so.addParam("menu","false");
 	so.addParam("wmode","transparent");
 	so.addParam("AllowScriptAccess","always");
