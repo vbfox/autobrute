@@ -3,6 +3,8 @@
 		<title>Auto brute</title>
 		<link href="/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
 		<link href="brute.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="swfobject.js"></script>
 	</head>
 <body>
 
